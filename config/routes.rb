@@ -3,7 +3,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  get "about-us", to: "about#index", as: :about
+  get "about", to: "about#index"
+
+  get "sign-up", to: "registrations#new"
+  post "sign-up", to: "registrations#create"
 
   root to: "main#index"
 end
