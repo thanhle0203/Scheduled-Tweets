@@ -5,10 +5,10 @@ class SessionsController < ApplicationController
       # finds existing user, checks to see if user can be authenticated
       if user.present? && user.authenticate(params[:password])
       # sets up user.id sessions
-        session[:user_id] = user.id
-        redirect_to root_path, notice: 'Logged in successfully'
+        session[:user_id] = @user.id
+        redirect_to root_path, notice: "Logged in successfully"
       else
-        flash[:alert] = 'Invalid email or password'
+        flash[:alert] = "Invalid email or password"
         render :new
       end
     end
