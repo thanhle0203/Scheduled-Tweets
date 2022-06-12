@@ -73,3 +73,6 @@ group :test do
 end
 
 gem "omniauth-twitter", "~> 1.4"
+
+gem "shutup", group: :development
+
